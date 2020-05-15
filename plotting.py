@@ -1,13 +1,15 @@
 class custom_plotting:
-    def __init__(self, fontsize=8, usetex=True):
-        self.fontsize = fontsize
-        self.usetex = usetex
-
-    def setup_plots(self):
+    def setup_plots(self,  fontsize=8, usetex=True):
         """
-        This function adjusts the default matplotlib settings so that all figures have the same feel.
+        This function adjusts the default matplotlib settings so that all
+        figures have the same feel.
+
+        Note that with usetex=True, fonts are rendered with LaTeX. This may
+        result in an error if LaTeX is not installed. In that case you can set usetex to False.
         """
         import matplotlib
+        self.fontsize = fontsize
+        self.usetex = usetex
         matplotlib.rc('legend', fontsize=self.fontsize, handlelength=3)
         matplotlib.rc('axes', titlesize=self.fontsize)
         matplotlib.rc('axes', labelsize=self.fontsize)
